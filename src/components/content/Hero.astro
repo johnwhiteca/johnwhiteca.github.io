@@ -1,0 +1,44 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+}
+
+const {
+	title,
+	subtitle,
+}: Props = Astro.props;
+---
+
+<div class="hero">
+	<h1 class="hero__title">
+		{title}
+	</h1>
+
+	{
+		subtitle && (
+			<p class="hero__subtitle">
+				{subtitle}
+			</p>
+		)
+	}
+</div>
+
+<style>
+	.hero {
+    	text-align: center;
+	}
+	
+	.hero__title {
+		margin: 0;
+		font-family: var(--font-heading);
+		font-size: clamp(var(--text-3xl), 8vw, 6rem);
+		color: var(--color-accent);
+	}
+
+	.hero__subtitle {
+		margin: var(--space-md) 0 0;
+		font-size: var(--text-lg);
+		color: var(--color-text-muted);
+	}
+</style>

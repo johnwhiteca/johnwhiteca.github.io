@@ -1,5 +1,5 @@
 {
-  "name": "johnwhite.ca",
+  "name": "jw-starter.v1",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.1.1"
+    "@iconify-json/lucide": "^1.2.118",
+    "astro": "^7.1.1",
+    "astro-icon": "^1.1.5"
   }
 }
