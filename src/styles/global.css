@@ -1,4 +1,4 @@
-/* johnwhite.ca — Global stylesheet */
+/* johnwhite.ca — shared and homepage styles */
 
 /* 01. Global styles ------------------------------------------------ */
 
@@ -107,7 +107,7 @@ a {
     rgba(18, 47, 69, 0.12) 65%,
     rgba(10, 30, 45, 0.38) 100%
   ),
-  url('/images/RiverCanardBridge_from_kayak.jpg')
+  url('/images/PXL_20240720_110138942.MP.jpg')
     center center / cover no-repeat;
   position: relative;
   overflow: hidden;
@@ -121,18 +121,18 @@ a {
   width: 65%;
   height: 70%;
   background: radial-gradient(ellipse,#294b5b 0%,transparent 70%);
-  opacity: .55;
+  opacity: .35;
 }
 
 .hero-inner {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.3fr .7fr;
+  grid-template-columns: 1.2fr .8fr;
   align-items: center;
   gap: 60px;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 95px;
+  padding-bottom: 55px;
 }
 
 .eyebrow {
@@ -143,10 +143,19 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(39px, 4.3vw, 58px);
-  line-height: 1.09;
-  max-width: 760px;
-  margin: 14px 0 20px;
+  font-size: clamp(36px, 3.5vw, 52px);
+  line-height: 1.12;
+  max-width: 800px;
+}
+
+.desktop-break {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .desktop-break {
+    display: none;
+  }
 }
 
 .hero p {
@@ -170,26 +179,6 @@ a {
   text-shadow: 0 1px 8px #234;
 }
 
-/* 04. Value strip -------------------------------------------------- */
-
-.strip {
-  background: #10283b;
-  color: white;
-}
-
-.strip-inner {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 16px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.strip span {
-  font-weight: 700;
-  font-size: 14px;
-  border-right: 1px solid #5a7181;
-}
 
 /* 05. Shared sections and About ------------------------------------ */
 
@@ -235,73 +224,7 @@ a {
   color: #07599e;
 }
 
-/* 06. Value cards -------------------------------------------------- */
 
-.values {
-  background: #f0f2f3;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #e5e8eb;
-  border-radius: 8px;
-  padding: 27px 24px;
-  min-height: 190px;
-}
-
-.card .icon {
-  font-size: 33px;
-  color: #07599e;
-  margin-bottom: 18px;
-}
-
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-/* 07. Experience --------------------------------------------------- */
-
-.experience {
-  background: linear-gradient(105deg,#10283b 0%,#17394d 75%,#24495a);
-  color: #fff;
-}
-
-.experience p {
-  color: #d8e3e8;
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1.5fr .5fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.stats {
-  border-left: 1px solid #78909d;
-  padding-left: 30px;
-  display: grid;
-  gap: 14px;
-  font-weight: 700;
-}
-
-/* added */
-/* =========================================
-   08. Experience in Action
-   ========================================= */
 
 /* =========================================
    08. Experience in Action
@@ -330,15 +253,19 @@ a {
   margin-bottom: 18px;
 }
 
-.experience-intro {
+.home-experience-intro {
   max-width: 800px;
   color: #d5e1e9;
   line-height: 1.75;
 }
 
+.experience .home-experience-intro {
+  color: #d5e1e9;
+}
+
 /* Three experience areas */
 
-.experience-highlights {
+.home-experience-highlights {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 65px;
@@ -346,21 +273,21 @@ a {
   margin-top: 48px;
 }
 
-.experience-highlight {
+.home-experience-highlight {
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
 }
 
-.experience-highlight:nth-child(3) {
+.home-experience-highlight:nth-child(3) {
   grid-column: 1 / -1;
   max-width: 850px;
   padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.experience-number {
+.home-experience-number {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 800;
@@ -368,14 +295,14 @@ a {
   padding-top: 5px;
 }
 
-.experience-highlight h3 {
+.home-experience-highlight h3 {
   font-size: 20px;
   line-height: 1.4;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
-.experience-highlight p {
+.home-experience-highlight p {
   color: #d5e1e9;
   font-size: 15px;
   line-height: 1.75;
@@ -399,15 +326,16 @@ a {
   color: #ffffff;
 }
 
+
 /* Responsive */
 
 @media (max-width: 760px) {
-  .experience-highlights {
+  .home-experience-highlights {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .experience-highlight:nth-child(3) {
+  .home-experience-highlight:nth-child(3) {
     grid-column: auto;
     max-width: none;
     padding-top: 0;
@@ -416,113 +344,20 @@ a {
 }
 
 @media (max-width: 480px) {
-  .experience-highlight {
+  .home-experience-highlight {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 
-  .experience-highlight h3 {
+  .home-experience-highlight h3 {
     font-size: 18px;
   }
 
-  .experience-highlights {
+  .home-experience-highlights {
     margin-top: 36px;
   }
 }
 
-/* Experience responsive layout */
-
-@media (max-width: 900px) {
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .experience-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-left: 0;
-    padding-top: 30px;
-    margin-top: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .experience-highlight {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .experience-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-highlight h3 {
-    font-size: 18px;
-  }
-}
-
-/* 08. Leadership approach ------------------------------------------ */
-
-/* =========================================
-   09. Service-Oriented Approach
-   ========================================= */
-
-.approach {
-  background: #f8fafb;
-}
-
-.approach-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 0.65fr;
-  gap: 65px;
-  align-items: center;
-}
-
-.approach-content h2 {
-  max-width: 720px;
-  margin-bottom: 22px;
-}
-
-.approach-content p {
-  max-width: 720px;
-  margin-bottom: 16px;
-  color: #45505b;
-  line-height: 1.75;
-}
-
-.approach-content p:last-child {
-  margin-bottom: 0;
-}
-
-.approach-quote {
-  margin: 0;
-  padding: 12px 0 12px 32px;
-  border-left: 2px solid #c6dcd2;
-}
-
-.approach-quote p {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: clamp(21px, 2vw, 27px);
-  font-style: italic;
-  line-height: 1.6;
-  color: #17394d;
-}
-
-/* Responsive */
-
-@media (max-width: 760px) {
-  .approach-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .approach-quote {
-    padding-left: 24px;
-  }
-}
 
 /* 09. Contact ------------------------------------------------------ */
 
@@ -614,6 +449,7 @@ a {
   }
 }
 
+
 /* 10. Footer and mobile navigation --------------------------------- */
 
 /* =========================================
@@ -688,8 +524,7 @@ a {
   .links.open {
     display: flex;
   }
-
-  .hero-inner,.about,.experience-grid,.approach {
+  .hero-inner,.about {
     grid-template-columns: 1fr;
   }
 
@@ -701,14 +536,6 @@ a {
     min-height: auto;
   }
 
-  .strip-inner,.cards {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .contact .container {
-    display: block;
-  }
-
   .section {
     padding: 56px 0;
   }
@@ -716,13 +543,6 @@ a {
 }
 
 @media (max-width:480px) {
-  .strip-inner,.cards {
-    grid-template-columns: 1fr;
-  }
-
-  .strip span {
-    border: 0;
-  }
 
   .hero h1 {
     font-size: 38px;
@@ -750,7 +570,7 @@ a {
         rgba(232, 241, 246, 0.82) 70%,
         rgba(232, 241, 246, 0.65) 100%
       ),
-      url('/images/RiverCanardBridge_from_kayak.jpg');
+      url('/images/PXL_20240720_110138942.MP.jpg');
 
     background-size: cover;
     background-position: center center;
@@ -772,16 +592,10 @@ a {
 
 }
 
-.hero {
-  min-height: auto;
-}
-
-.hero-inner {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 35px;
-}
-
-.hero-quote {
-  font-size: 21px;
-}
+/* Reusable section surfaces and layouts */
+.section-dark { background: #163448; color: #f7fbfd; }
+.section-light { background: #f0f3f5; color: #13263a; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+@media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
+/* Shared contact, with a page-specific colour variation */
+.contact-experience { background: #1b4764; }

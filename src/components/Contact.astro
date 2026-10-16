@@ -1,0 +1,17 @@
+---
+interface Props { variant?: 'home' | 'experience'; }
+const { variant = 'home' } = Astro.props;
+---
+<section class:list={['contact', 'section', { 'contact-experience': variant === 'experience' }]} id="contact">
+  <div class="container contact-inner">
+    <div class="contact-content">
+      <div class="eyebrow">LET'S CONNECT</div>
+      <h2>Let's explore what's possible.</h2>
+      <p>Open to conversations about IT leadership, broader management opportunities, and meaningful organizational growth.</p>
+    </div>
+    <div class="contact-actions">
+      <a class="button contact-button" href="mailto:connect@johnwhite.ca">Send an Email →</a>
+      <a class="button contact-linkedin" href="https://www.linkedin.com/in/jwit/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>

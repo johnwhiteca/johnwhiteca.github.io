@@ -1,0 +1,18 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© {new Date().getFullYear()} John White</span>
+    <div class="footer-links">
+      <a href="mailto:connect@johnwhite.ca">Email</a>
+      <a href="https://www.linkedin.com/in/jwit/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('.back-to-top').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
