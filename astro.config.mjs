@@ -1,2 +1,8 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
-export default defineConfig({ site: 'https://johnwhite.ca' });
+import icon from 'astro-icon';
+
+export default defineConfig({
+	site: 'https://johnwhite.ca',
+	integrations: [icon()],
+});
