@@ -9,7 +9,7 @@ const { current = 'home' } = Astro.props;
     <nav class="links" id="primary-navigation" aria-label="Main navigation">
       <a href="/" aria-current={current === 'home' ? 'page' : undefined}>Home</a>
       <a href="/#about">About</a>
-      <a href="/experience" aria-current={current === 'experience' ? 'page' : undefined}>Experience</a>
+      <a href="/#experience" aria-current={current === 'experience' ? 'page' : undefined}>Experience</a>
       <a href="/#contact">Contact</a>
       <a class="button" href="mailto:connect@johnwhite.ca">Let's Connect</a>
     </nav>
